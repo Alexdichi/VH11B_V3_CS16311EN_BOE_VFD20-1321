@@ -127,23 +127,23 @@ Keyboard input working
 IR input verified
 Solid base for a reusable library
 
-Philosophy
+## Philosophy
 
 This project documents what actually works, not just what datasheets claim.
 It is intended to help makers reuse VFD hardware that would otherwise be discarded and make it usable in real-world projects.
 If it works on this board, it works in real life.
 
-Credits
+## Credits
 
 The 14-segment ASCII font mapping used in this project was inspired by open-source work from the maker community and adapted specifically for the BOE VFD20-1321 display and CS16311 RAM layout.
 The original reference implementation can be found at:
 https://github.com/dmadison/LED-Segment-ASCII
 This project includes significant modifications, remapping and validation performed directly on real hardware.
 
-License
+## License
 To be defined.
 
-Contributions
+## Contributions
 
 Contributions, testing on similar hardware, and documentation improvements are welcome.
 If you reuse this display in your own project, feel free to share your results.
