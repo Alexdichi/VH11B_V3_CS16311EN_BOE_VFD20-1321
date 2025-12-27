@@ -90,8 +90,6 @@ The remaining pins provide serial control and power for the CS16311.
 - Custom segment mapping for BOE display
 - ASCII font adapted from **FourteenSegmentASCII**
 
----
-
 ## Icons and Bars
 
 - Dedicated RAM addresses for icons (USB, PLAY, REC, etc.)
