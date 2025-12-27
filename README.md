@@ -88,7 +88,6 @@ The remaining pins provide serial control and power for the CS16311.
 - **3 RAM bytes per character**
 - Custom segment mapping for BOE display
 - ASCII font adapted from **FourteenSegmentASCII**
-
 ---
 
 ## 🎛 Icons and Bars
@@ -97,9 +96,12 @@ The remaining pins provide serial control and power for the CS16311.
 - **10-step bar indicators** (R1–R10)
 
 Example API:
-```cpp
+
+```
 display.setIcon(ICON_USB, true);
 display.setBarLevel(5);
+```
+
 ⌨ Keyboard
 
 Scanned internally by CS16311
