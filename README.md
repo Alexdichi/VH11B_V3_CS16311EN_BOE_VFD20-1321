@@ -7,7 +7,7 @@ No complete official schematics were available. All functionality was validated 
 
 ---
 
-## Features
+## ✨ Features
 
 - Full control of a **14-segment alphanumeric VFD display**
 - Support for **11 characters**
@@ -23,7 +23,7 @@ No complete official schematics were available. All functionality was validated 
 
 ---
 
-## Hardware Overview
+## 🧠 Hardware Overview
 
 - **Board:** VH11B-V3 (front panel from satellite receivers)
 - **VFD Controller:** CS16311EN (CS16311 compatible)
@@ -33,14 +33,14 @@ No complete official schematics were available. All functionality was validated 
   - Integrated keyboard matrix (via CS16311)
   - External IR receiver (direct to MCU)
 
-> **Important**  
+> ⚠️ **Important**  
 > **DIN and DOUT are NOT the same line.**  
 > Keyboard reading works **only via DOUT**.  
 > Attempting to read keys via DIN does **not** work.
 
 ---
 
-## Board Connector (7-pin header)
+## 🔌 Board Connector (7-pin header)
 
 The VH11B-V3 board exposes a **7-pin connector**, not a direct CS16311 header.
 
@@ -59,16 +59,15 @@ The remaining pins provide serial control and power for the CS16311.
 | 6 | +5V | Logic supply (routed through **two series diodes**) |
 | 7 | GND | Ground |
 
-### Power note (IMPORTANT)
+### Power note
 
 - The **+5V line does NOT go directly** to the CS16311.
 - It passes through **two series diodes** before reaching **CS16311 VDD (pin 14)**.
-- This results in a voltage drop of approximately **1.2–1.4 V**.
-- This behavior was confirmed by **physical board tracing**.
+- Voltage drop: approximately **1.2–1.4 V** (confirmed by board tracing).
 
 ---
 
-## Example Arduino Nano Wiring
+## 🔌 Example Arduino Nano Wiring
 
 | Board Pin | Signal | Arduino Nano |
 |----------:|--------|--------------|
@@ -82,7 +81,7 @@ The remaining pins provide serial control and power for the CS16311.
 
 ---
 
-## Display Capabilities
+## 🔤 Display Capabilities
 
 - **14-segment alphanumeric characters**
 - **11 character positions** (2G … 12G)
@@ -90,16 +89,18 @@ The remaining pins provide serial control and power for the CS16311.
 - Custom segment mapping for BOE display
 - ASCII font adapted from **FourteenSegmentASCII**
 
-## Icons and Bars
+---
+
+## 🎛 Icons and Bars
 
 - Dedicated RAM addresses for icons (USB, PLAY, REC, etc.)
 - **10-step bar indicators** (R1–R10)
-- Planned high-level API such as:
 
+Example API:
 ```cpp
 display.setIcon(ICON_USB, true);
 display.setBarLevel(5);
-Keyboard
+⌨ Keyboard
 
 Scanned internally by CS16311
 
@@ -109,40 +110,48 @@ Data output via DOUT
 
 4-byte key data (K0–K3)
 
-Do NOT use INPUT_PULLUP on DOUT
+❌ Do NOT use INPUT_PULLUP on DOUT
 
-Repository Structure (planned)
+📁 Repository Structure (planned)
 /docs        → Technical documentation
 /src         → Driver and display abstraction
 /examples    → Usage examples
 /fonts       → 14-segment font tables
-Project Status
 
-Display fully working
-ASCII text rendering validated
-Icons and bars mapped
-Keyboard input working
-IR input verified
-Solid base for a reusable library
+🚀 Project Status
 
-## Philosophy
+✔ Display fully working
+
+✔ ASCII text rendering validated
+
+✔ Icons and bars mapped
+
+✔ Keyboard input working
+
+✔ IR input verified
+
+✔ Solid base for a reusable library
+
+📜 Philosophy
 
 This project documents what actually works, not just what datasheets claim.
+
 It is intended to help makers reuse VFD hardware that would otherwise be discarded and make it usable in real-world projects.
+
 If it works on this board, it works in real life.
 
-## Credits
+🙏 Credits
 
 The 14-segment ASCII font mapping used in this project was inspired by open-source work from the maker community and adapted specifically for the BOE VFD20-1321 display and CS16311 RAM layout.
-The original reference implementation can be found at:
-https://github.com/dmadison/LED-Segment-ASCII
-This project includes significant modifications, remapping and validation performed directly on real hardware.
 
-## License
+Original reference:
+https://github.com/dmadison/LED-Segment-ASCII
+
+📄 License
+
 To be defined.
 
-## Contributions
+🤝 Contributions
 
 Contributions, testing on similar hardware, and documentation improvements are welcome.
 If you reuse this display in your own project, feel free to share your results.
----
