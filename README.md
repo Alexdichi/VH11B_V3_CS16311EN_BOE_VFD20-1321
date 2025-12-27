@@ -4,6 +4,7 @@ Arduino library and technical documentation for the **VH11B-V3** board using the
 
 This project is based on **real hardware reverse engineering and extensive empirical testing**.  
 No complete official schematics were available. All functionality was validated directly on the hardware.
+![1766806656031](https://github.com/user-attachments/assets/c050e405-5678-483b-ac7b-0029c3c4b8c2)
 
 ---
 
